@@ -1,0 +1,975 @@
+/*样式重置  06A3E3*/
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    border: none;
+    font-size: 1em;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    border: none;
+}
+
+em, strong, th {
+    font-style: normal;
+    font-weight: normal;
+}
+
+th, td {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+input, textarea, select {
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    *font-size: 100%;
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    color: #666;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+    color: #333;
+}
+
+label, span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+i {
+    font-style: normal;
+}
+
+label {
+}
+
+.margini {
+    margin: 0.5em auto;
+}
+
+input[type=text] {
+}
+
+a {
+    display: inline;
+    text-decoration: none;
+}
+
+.margin-bottom {
+    padding-bottom:3.6em;
+}
+
+li {
+    list-style: none;
+}
+
+.mt {
+    margin-top: 3.8em;
+}
+
+.mb {
+    margin-bottom: 3.8em;
+}
+
+.bola {
+    border: 1px solid #06A3E3;
+}
+
+.vat {
+    vertical-align: top;
+}
+
+.disi {
+    display: block;
+}
+
+.tcenter {
+    text-align: center;
+}
+/**/
+.waper {
+    width: 100%;
+}
+
+.whalf {
+    width: 50% !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.mta {
+    margin-top: 3em;
+}
+
+button {
+    background: none;
+}
+
+.bobd {
+    border-bottom: 1px dashed #ccc;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #f6f6f6;
+    height: 90%;
+}
+
+.ui-view {
+    height: 100%;
+}
+
+.bgcolor {
+    background: #008AD4;
+}
+
+.color {
+    color: #06A3E3;
+}
+
+.colorf {
+    color: #fff;
+}
+
+.boae {
+    border: 1px solid #ccc;
+}
+
+.bo {
+    border: 1px solid #111;
+    width: 70%;
+}
+
+.boa {
+    border: 1px solid #D7D7D7;
+    width: 27%;
+}
+
+.date-input {
+    border: 1px solid #D7D7D7;
+    width: 26%;
+}
+
+.bgfilter {
+    opacity: 0.4;
+}
+
+.bob {
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.bot {
+    border-top: 1px solid #D7D7D7;
+}
+
+.bol {
+    border-left: 1px solid #D7D7D7;
+}
+
+.bor {
+    border-right: 1px solid #D7D7D7;
+}
+
+.bgf {
+    background: #fff;
+}
+
+.ui-view {
+    width: 100%;
+}
+
+.chgline.cusp {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.cusp {
+    line-height: 1.8em;
+}
+
+.mtb {
+    margin-top: 0.5em;
+}
+
+.cl:after {
+    content: ".";
+    display: block;
+    clear: both;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.cl {
+    zoom: 1;
+}
+/*清楚浮动*/
+/*--复选框--*/
+/*-----清除复选框原有样式，加在需要改变复选框的页面css
+input[type=checkbox]{visibility: hidden;}
+----*/
+/*.checkboxFour {margin: 2px 0 0;width: 14px;height: 14px;border-radius: 4px;margin-right: 5px;position: relative;}
+.checkboxFour label {display: inline-block;width: 12px;height: 12px;border-radius: 4px;cursor: pointer;position: absolute;top: 0px;left: 0px;z-index: 1;background: #fff;border: 1px solid #999;}
+.checkboxFour input[type=checkbox]:checked + label {width: 14px;height: 14px;background: url(../img/duigou.png);border: none;}*/
+
+.checkboxFour, .checkboxFour-none {
+    margin: 0.5em 0.5em 0 1em;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 0.65em;
+    position: relative;
+}
+
+.checkboxFour-none {
+    border: none;
+}
+
+    .checkboxFour-none::before {
+        content: "已提";
+        color:gray;
+    }
+
+    .checkboxFour label, .checkboxFour-none label {
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 0.6em;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        background: none;
+    }
+
+    .checkboxFour-none label {
+        border: none;
+    }
+
+.checkboxFour input[type=checkbox], .checkboxFour input[type=radio] {
+    width: 1.2em;
+    height: 1.2em;
+    opacity: 0;
+}
+
+    .checkboxFour input[type=checkbox]:checked + label, .checkboxFour input[type=radio]:checked + label {
+        width: 0.7em;
+        height: 0.7em;
+        background: #06A3E3;
+        border: 0.3em solid #fff;
+        border-radius: 0.6em;
+    }
+
+.checkboxFour-none input[type=checkbox], .checkboxFour-none input[type=checkbox]:checked + label {
+    display: none;
+}
+/*------复选框 html--
+	<p class="left checkboxFour">
+	    <input class="left" type="checkbox" id="checkboxFourInput">
+	    <label for="checkboxFourInput"></label>
+    </p>
+ -----*/
+.gps {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 3em;
+	height: 3em;
+	color: #fff;
+	background: #008AD4;
+}
+/*无返回的头部    html
+ <p class="gps waper">首页</p>
+  */
+.gpser {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	line-height: 3em;
+	height: 3em;
+	background: #008AD4;
+}
+
+    .gpser img {
+	float: left;
+	width: 0.8em;
+	height: 1.2em;
+	margin: 0.9em 0 0 1em;
+}
+
+    .gpser p {
+	width: 40%;
+	height: 3em;
+	text-align: center;
+	line-height: 3em;
+	color: #fff;
+	font-size: 1em;
+	margin: 0 auto;
+}
+
+.gpser span {
+    color: #fff;
+    font-size: 0.9em;
+    margin: 0 1em;
+}
+/*有返回的头部       html
+<div class="gpser waper">
+	<img onclick="location='gouwuche.html'" src="img/FHui.png">
+	<p>找回密码</p>
+</div>
+*/
+
+header.gps {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 3em;
+	height: 3em;
+}
+/*无返回的头部    html
+ <p class="gps waper">首页</p>
+  */
+header {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	line-height: 3em;
+	height: 3em;
+}
+
+    header img {
+	width: 0.8em;
+	height: 1.2em;
+	margin: 0.9em 1em;
+}
+
+        header img.tianJ {
+	width: 1.5em;
+	height: 1.5em;
+	margin-top: 0.8em;
+}
+
+    header p {
+	display: block;
+	width: 40%;
+	height: 3em;
+	text-align: center;
+	line-height: 3em;
+	font-size: 1em;
+	margin: 0 auto;
+}
+
+    header span {
+	margin: 0 1em;
+	font-size: 0.9em;
+}
+/*首页*/
+.home-map-div {
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    border: 0px;
+}
+
+@media screen and (min-height:560px) {
+    .home-map-div {
+        height:45% !important;
+    }
+}
+
+.home-map-div div:first-child {
+    margin: 0 auto;
+    width: 99%;
+    height: 100%;
+    border: 1px solid #D7D7D7;
+}
+
+.home-Qdao-div {
+    margin-top: 2%;
+	text-align: center;
+}
+
+@media screen and (min-height:560px) {
+    .home-Qdao-div {
+        margin-bottom: 5%;
+        margin-top: 8%;
+    }
+}
+.home-Qdao-div  button {
+	margin: 1em 0;
+    width: 44%;
+	height: 2.5em;
+	border-radius: 0.5em;
+	color: #fff;
+	background: #008AD4;
+}
+
+.home-tiqu-div {
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 0.5em;
+    color: red;
+    font-family: 微软雅黑;
+    font-size: large;
+    border: 1px solid #008AD4;
+    text-align: left;
+    height: 78px;
+    Word-spacing: 2px;
+}
+
+    .home-tiqu-div div:nth-child(1) {
+        width: 73%;
+        float: left;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-left: 6%;
+    }
+
+    .home-tiqu-div div:nth-child(2) {
+        background: #008AD4;
+        border-top-right-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        width: 20%;
+        height: 66%;
+        float: right;
+        margin-right: -1px;
+        text-align: center;
+        color: #fff;
+        border: 1px solid #008AD4;
+        padding-top: 25px;
+    }
+
+    .home-tiqu-div div:first-child span:first-child span:first-child {
+        color: red;
+        padding-bottom: 10px;
+        overflow:hidden; 
+    }
+
+    @media screen and (min-height:560px) {
+        .home-tiqu-div div:first-child span:first-child span:first-child {
+        font-size: x-large; 
+        }
+    }
+
+    .home-tiqu-div div:first-child span:last-child span:first-child {
+        color: #bf7c18;
+        padding-bottom: 3px;
+        overflow:hidden; 
+}
+
+
+
+.foot {
+	z-index: 100;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 3.5em;
+	background: #f2f2f2;
+    padding: 0;
+    vertical-align: middle;
+}
+
+    .foot p {
+	/*margin-top: 0.2em;*/
+	width: 25%;
+	height: 3.0em;
+	text-align: center;
+        padding: 0.3em 0 0.2em 0;
+    }
+
+        .foot p img {
+	width: 1.5em;
+}
+
+        .foot p span {
+	display: block;
+	font-size: 0.8em;
+	color: #999;
+} 
+
+            .foot p span.her {
+	color: #008AD4;
+}
+
+
+/*登录*/
+.log {
+	margin-top: 3em;
+}
+
+    .log p {
+	height: 3em;
+	line-height: 3em;
+	background: #fff;
+}
+
+        .log p label {
+	display: inline-block;
+	text-indent: 1em;
+}     
+
+    .log span {
+	margin: 0.2em 0.5em 0 0;
+	font-size: 0.9em;
+	color: #999999;
+}
+
+    .log button {
+	display: block;
+	width: 95%;
+	height: 2.5em;
+	border-radius: 0.5em;
+	margin: 4em auto;
+	color: #fff;
+}
+
+        .log button.qwx {
+	width: 30%;
+	border: 1px solid #008AD4;
+	color: #008AD4;
+}
+
+/*找回密码/修改密码*/
+.zhaoh p {
+	height: 3.2em;
+	line-height: 3.2em;
+	background: #fff;
+}
+
+    .zhaoh p label {
+	display: inline-block;
+	width: 6em;
+	color: #666;
+	text-indent: 1em;
+}
+
+    .zhaoh p input {
+	outline: none;        	
+}
+
+.zhaoh .sw button {
+	display: inline-block;
+	width: 6em;
+	height: 2em;
+	border-radius: 1em;
+	border: 1px solid #008AD4;
+	color: #008AD4;
+	background: none;
+	margin: 0.6em 1em 0 0;
+}        
+
+.zhaoh .sw input {
+	width: 5em;
+}
+
+.zhaoh .xin {
+	margin-top: 0.8em;
+}
+
+.zhaoh .xia {
+	display: block;	
+	width: 95%;
+	height: 2.5em;
+	margin: 2em auto 0;
+	color: #fff;
+	background: #008AD4;
+	border-radius: 0.5em;	
+}
+/*设置*/
+.shez p {
+	height: 3.2em;
+	line-height: 3.2em;
+	background: #fff;
+}
+
+    .shez p label {
+	display: inline-block;
+	color: #666;
+	margin: 0 1em;
+}
+
+    .shez p img {
+	width: 0.5em;
+	height: 1em;
+	margin: 1.1em 1em 0;
+}
+
+    .shez p.shouji input {
+	width: 7em;
+}
+
+    .shez p.shouji button {
+	padding: 0 0.2em;
+	height: 2em;
+	margin: 0.5em 1em;
+	border-radius: 1em;
+}
+
+.shez .xin {
+	margin-top: 0.8em;
+}
+
+.shez .xia {
+	display: block;	
+	width: 95%;
+	height: 2.5em;
+	margin: 2em auto 0;
+	color: #fff;
+	background: #008AD4;
+	border-radius: 0.5em;	
+}
+/*新增客户*/
+.xinZ {
+	width: 95%;
+	margin: 0.6em auto;
+	background: #fff;
+}
+
+    .xinZ p {
+	height: 2.5em;
+	line-height: 2.5em;
+	text-indent: 0.5em;
+	border-radius: 0.5em 0.5em 0 0;
+}
+
+        .xinZ p.tis {
+	height: 1.2em;
+	line-height: 1.2em;
+	font-size: 0.8em;
+}
+
+    .xinZ textarea {
+	width: 96%;
+	height: 6em;
+	padding: 0.4em 2%;
+	margin-bottom: 0.1em;
+	line-height: 1.2em;
+	border-radius: 0 0 0.5em 0.5em;
+	resize: none;
+}
+
+    .xinZ .photo {
+	position: relative;
+}
+
+        .xinZ .photo img {
+	margin: 0.3em 0 0.5em 0.5em;
+	width: 14em;
+	height: 9em;
+}
+
+        .xinZ .photo input {
+	position: absolute;
+	left: 0.5em;
+	top: 0.2em;
+    width: 14em;
+	height: 9em;
+	cursor: pointer;
+	opacity: 0;
+}
+
+    .xinZ textarea.beiZ {
+	height: 3em;
+}
+/*拜访客户*/
+.souS {
+	height: 2.8em;
+	line-height: 2.8em;
+	background: #eee;
+    overflow: hidden;
+}
+
+    .souS > img {
+	width: 1.5em;
+	height: 1.4em;
+	margin: 0.7em 0.4em 0 0.5em;
+}
+
+    .souS label {
+	font-size: 0.9em;
+}
+
+.anniu {
+	margin: 0.6em 1em 0 0;
+	width: 4.7em;
+	height: 2em;
+	line-height: 2em;
+	background: #008AD4;
+	color: #fff;
+	font-size: 0.9em;
+    border-radius: 0.5em;	
+}
+
+.time {
+
+height:25px;
+}
+    .anniu img {
+	width: 1.3em;
+	height: 1.2em;
+	margin: 0.4em 0.4em 0;
+}
+ 
+
+.borrs {
+       border-radius: 0.3em;	
+}
+.colN {
+	color: #999;
+}
+
+.baif div p:first-child {
+	margin-top: 0.2em;
+}
+
+    .baif div p:first-child span {
+	margin-right: 1em;
+	font-size: 0.8em;
+	line-height: 2.2em;
+}
+
+        .baif div p:first-child span.xq {
+	margin-right: 1em;
+	text-align: center;
+	font-size: 0.9em;
+	line-height: 2.2em;
+}
+
+.baif div p:nth-child(2) span {
+	line-height: 2.2em;
+	margin: 0 1em 0;	
+}
+/*客户订单*/
+.dingd div p {
+	margin-left: 1em;
+	line-height: 1.8em;
+}
+
+    .dingd div p span {
+	color: #c00;
+}
+
+.dingd div a {
+	width: 4.7em;
+	height: 1.8em;
+	line-height: 1.8em;
+	text-align: center;
+	background: #008AD4;
+	color: #FFF;
+	margin: 1.7em 1em 0 0;
+}
+/*订单详情*/
+.dingx p {
+	margin-left: 1em;
+	line-height: 1.8em;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.price {
+	color: #c00;
+}
+/*消息*/
+.XIAO {
+	width: 94%;
+	margin: 0.5em auto;
+}
+
+    .XIAO .xiaox {
+	margin: 0.2em 0 0 0.5em;
+	width: 95%;
+	height: 4.6em;
+	line-height: 1.5em;
+}
+
+    .XIAO .fsren, .XIAO .fsrennew {
+	margin: 0.2em 0 0 0.5em;
+	width: 95%;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+
+    .XIAO .fsrennew {
+        height: auto;
+}
+
+    .XIAO a {
+	margin: 5.5em 0.5em 0 0;
+}
+
+        .XIAO a img {
+	width: 2em;
+}
+
+        .XIAO a.xq {
+	margin: 5.5em 0.5em 0 0;
+}
+
+            .XIAO a.xq img {
+	width: 2em;
+}
+
+.showmsg {
+    color: red;
+    width: 95%;
+    margin: 0.1em 0 0 0.5em;
+}
+
+.hasread {
+    color: #cacaca;
+}
+
+.limitcount {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 65%;
+}
+
+.msgfrom {
+    display: inline-block;
+    color: #999;
+    width: 30%;
+    font-size: 0.7em;
+}
+
+.msgfromr {
+    width: 60%;
+    text-align: right;
+}
+/*我的客户-》客户订单客户详情 start*/
+.mycdetail {
+    width: 95%;
+    padding: 0.3em 0.8em;
+    box-sizing: border-box;
+    margin: 3.8em auto;
+}
+
+    .mycdetail .anniu {
+        display: inline-block;
+        margin: 0;
+        padding: 0.1em;
+        text-align: center;
+    }
+
+.btnr {
+    display: block;
+    margin: 0 0 0.2em 0;
+    padding: 0.1em;
+    color: #fff;
+    text-align: center;
+    background-color: #008AD4;
+    width: 4.7em;
+    height: 2em; 
+}
+
+.mbottom, .mycdetail p {
+    margin: 0.3em auto;
+}
+/*我的客户-》客户订单客户详情 end*/
+
+/*---佣金---*/
+.yongj_a {
+	width: 94%;
+	margin: 0 auto;
+	padding-top: 0.5em;
+}
+
+    .yongj_a p:nth-child(-n+4) {
+	padding-left: 0.8em;
+	line-height: 1.8em;
+}
+
+    .yongj_a button {
+	display: block;
+	width: 95%;
+	height: 2em;
+	margin: 0.5em auto;
+}
+
+.yongj_b div:last-child {
+	border: none;
+}
+
+.yongj_b span {
+	display: block;
+	line-height: 2.4em;
+}
+
+.yongj_c {
+	background: #06A3E3;
+	width: 94%;
+	margin: 0.5em auto;
+}
+
+    .yongj_c p:first-child {
+	margin: 0.6em;
+	height: 2.6em;
+	width: 2.6em;
+	border-radius: 1.8em;
+	padding: 0.3em;
+}
+
+        .yongj_c p:first-child img {
+	width: 2.6em;
+	height: 2.6em;
+}
+
+    .yongj_c p:last-child span {
+	display: block;
+	font-size: 0.9em;
+}
+
+        .yongj_c p:last-child span:first-child {
+	font-size: 1.2em;
+	line-height: 1.3em;
+}
+.yongj_c p:last-child span:last-child em:first-child{
+	font-size: 2em;
+	line-height: 1.3em;	
+}
+.yongj_c p:last-child span:last-child em:last-child{
+	font-size: 1.5em;
+}

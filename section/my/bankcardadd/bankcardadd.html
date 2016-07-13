@@ -1,0 +1,35 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ui-sref="mybankcard" src="img/FHui.png">
+    <p class="colorf">添加银行卡</p>
+</header>
+ 
+<div class="waper mta shez mb margin-bottom">
+    <p class="bgc">
+        <label class="left">请绑定本人银行卡</label>
+    </p>
+    <p class="bgf bot">
+        <label class="left" ng-bind="'持卡人：' + (bankcard.name)"></label>
+    </p>
+    <p class="bob bot bgf">
+        <label class="left">卡&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+        <input type="text" name="cardnumber" ng-model="bankcard.cardnumber" ng-pattern="/(\d{16}|\d{17}|\d{18}|\d{19})/" value="{{bankcard.cardnumber}}" ng-blur="getcardtype()" placeholder="请输入银行卡号" required />
+    </p>
+    <p class="bgf">
+        <label class="left" ng-bind="'卡类型：' + (bankcard.cardtype)"></label>
+    </p>
+    <p class="bot bgf">
+        <label class="left">省&nbsp;&nbsp;&nbsp;&nbsp;市：</label>
+        <input type="text" name="addressreadonly" ng-model="addressreadonly" placeholder="选择省市" readonly="readonly" ng-click="selectaddress(0,true)" required />
+        <input type="hidden" name="address" ng-model="bankcard.address" value="{{bankcard.address}}" />
+    </p>
+    <p class="bob bot bgf shouji">
+        <label class="left">手机号：</label>
+        <input type="text" name="phonenumber" style="width:30%" ng-model="bankcard.phonenumber" ng-pattern="/(1[3|4|5|7|8])[0-9]\d{8}/" value="{{bankcard.phonenumber}}" placeholder="请输入手机号" required />
+        <button class="right bola" type="button" ng-click="getverifycode()" ng-disabled="isdisabled" ng-bind="verifytext"></button>
+    </p>
+    <p class="bob bgf">
+        <label class="left">验证码：</label>
+        <input type="text" name="verifycode" style="width:30%" ng-maxlength="4" ng-model="bankcard.verifycode" value="{{bankcard.verifycode}}" placeholder="请输入验证码" required />
+    </p>
+    <button class="xia borrs bgcolor colorf" ng-click="commit()" ng-bind="committext">确认</button>
+</div>

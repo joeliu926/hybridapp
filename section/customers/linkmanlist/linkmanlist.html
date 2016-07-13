@@ -1,0 +1,44 @@
+﻿<header class="waper bgcolor">
+    <img class="right tianJ" src="img/jia.png" ui-sref="addcustomer" />
+    <p class="colorf">客户联系人</p>
+</header>
+<div class="dingd waper mta mb margin-bottom" ng-init="customerordersinit()">
+    <p class="bob souS">
+        <img class="left" src="img/rili.png">
+        <a class="right borrs anniu" ng-click="customerordersinit()">
+            <img class="left" src="img/fangDJ.png">
+            搜索
+        </a>
+        <label> </label>
+        <input class="boa borrs time" type="text" name="startdate" ng-click="pickDate('start')" ng-model="orders.startdate" />
+        <label>-</label>
+        <input class="boa borrs time" type="text" name="enddate" ng-click="pickDate('end')" ng-model="orders.enddate" />
+    </p>
+    <div class="bobd boa bgf XIAO" ng-repeat="order in orderslist">
+        <a class="right borrs" ng-click="showorderdetail(order.OrderID)">详情</a>
+        <div ng-click="showorderdetail(order.OrderID)">
+            <p ng-bind="'订单号：' + (order.OrderShowID)"></p>
+            <p ng-bind="'买家姓名：' + (order.ContactName)"></p>
+            <p ng-repeat="phone in order.ContactWay" ng-if="phone.ischecked === 0" ng-bind="'买家电话：' + (phone.keystring)"></p>
+        </div>
+    </div>
+</div>
+<!--<div ng-include="'/Mobile/section/common/footer.html'"></div>-->
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/x2.png" />
+        <span class="her">客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

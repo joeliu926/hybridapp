@@ -1,0 +1,101 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="mycustomer" src="img/FHui.png">
+    <span class="right" ui-sref="addcustomer({id:detail.Id,isdetail:1})">编辑</span>
+    <p>客户详情</p>
+</div>
+<div class="mt  boa bgf chgline waper  mycdetail chgline mb margin-bottom" style="padding-bottom:4.5em;">
+    <p class="">
+        <b>客户名称：</b><span ng-bind="detail.Name"></span>
+    </p>
+    <p class="">
+        <b>客户编码：</b><span ng-bind="detail.CodeNumber"></span>
+    </p>
+    <p class="">
+        <b>客户类型：</b><span ng-bind="detail.CustomerType"></span>
+    </p>
+    <p class="">
+        <b>来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;源：</b><span ng-bind="detail.Froms"></span>
+    </p>
+    <p class="">
+        <b>行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</b><span ng-bind="detail.BusinessType"></span>
+    </p>
+    <p class="">
+        <b>客户级别：</b><span ng-bind="detail.CustomerLevel"></span>
+    </p>
+    <p class="">
+        <b> 注册资本：</b><span ng-bind="detail.Assets"></span>
+    </p>
+    <p class="">
+        <b>员工数量：</b><span ng-bind="detail.EmployeesNumber"></span>
+    </p>
+    <p class="">
+        <b>公司电话：</b><span ng-bind="detail.OfficialTel"></span>
+    </p>
+    <p class="">
+        <b>客户地址：</b><span ng-bind="detail.CustomerAddress"></span>
+    </p>
+    <p class="">
+        <b> 客户简介：</b><span ng-bind="detail.CustomerIntro"></span>
+    </p>
+    <p class="">
+        <b>合作现状：</b><span ng-bind="detail.CooperationCurrent"></span>
+    </p>
+    <p class="">
+        <b>合作前景：</b><span ng-bind="detail.CooperationProspect"></span>
+    </p>
+    <p class="">
+        <b> 跟进策略：</b><span ng-bind="detail.FollowsTrategy"></span>
+    </p>
+    <p>
+        <b>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</b><span ng-bind="detail.Remarks"></span>
+    </p>
+    <p>
+        <b>店铺图片：</b><span><img style="width:280px;" src="{{'http://image.lianduan.com.cn/'+detail.ImageId}}" /></span>
+    </p>
+    <p style="margin-top:20px;">
+        <b style="text-align:center;width:100%;display:block;">客户联系人</b>
+    </p>
+    <div class="bobd boa bgf" ng-repeat="linkmans in detail.CustomeLinkmans" style="width:100%;margin-bottom:0.3em;padding-left:5px;">
+
+        <div ui-sref="addlinkman({id:detail.Id,cname:detail.Name,linkmanid:linkmans.Id,isdetail:1})">
+            <p ng-bind=" '联系姓名：' + (linkmans.Name)">
+            </p>
+            <p ng-bind="'性&nbsp;&nbsp;&nbsp;&nbsp;别：' + {1:'男',2:'女'}[linkmans.Sex]"></p>
+            <p ng-bind="'联系电话：' + (linkmans.PhoneNumber)"></p>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div style="text-align:center; margin-top:10px; margin-bottom:10px;">
+        <p class="anniu" style="float:left;margin-top:5px; width:45%;" ui-sref="customerorderscur({id:detail.Id,uid:detail.UserId,name:detail.Name})">
+            订单列表
+        </p>
+        <p class="anniu" style="float:right; margin-right:5px;margin-top:5px;width:45%;" ui-sref="customervisitcur({id:detail.Id,name:detail.Name})">
+            拜访记录
+        </p>
+        <p style="float:left; width:45%;margin-top:5px;" class="anniu" ui-sref="customeradd({id:detail.Id,isdetail:1})">
+            新增拜访
+        </p>
+        <p style="float:right;margin-right:5px;width:45%;margin-top:5px;" class="anniu" ui-sref="addlinkman({id:detail.Id,cname:detail.Name,isdetail:1})">
+            添加联系人
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/x2.png" />
+        <span class="her">客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

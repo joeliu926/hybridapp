@@ -1,0 +1,24 @@
+﻿<div class="gpser waper">
+    <img ui-sref="login" src="img/FHui.png">
+    <p>找回密码</p>
+</div>
+<div class="waper mta zhaoh">
+    <p class="bob">
+        <label>账号:</label>
+        <input type="tel" name="phonenum" ng-maxlength="11" ng-minlength="11" ng-model="retrievepwd.phonenum" ng-pattern="(1[3|4|5|7|8])[0-9]\d{8}" placeholder="请输入手机号码" required />
+    </p>
+    <p class="sw bob">
+        <label>验证码:</label>
+        <input type="text" name="verifycode" ng-maxlength="4" ng-model="retrievepwd.verifycode" placeholder="请输入验证码" required />
+        <button class="right" type="button" ng-click="getverifycode()" ng-disabled="isdisabled" ng-bind="verifytext"></button>
+    </p>
+    <p class="bob bot xin">
+        <label>新密码:</label>
+        <input type="password" name="pwd" ng-model="retrievepwd.pwd" placeholder="请输入新密码" required />
+    </p>
+    <p class="bob">
+        <label>确认密码:</label>
+        <input type="password" name="pwdconfirm" ng-model="retrievepwd.pwdconfirm" placeholder="请再次输入密码" required />
+    </p>
+    <button class="xia" type="button" ng-click="commit()" ng-bind="committext"></button>
+</div>

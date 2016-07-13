@@ -1,0 +1,24 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ui-sref="mycommission" src="img/FHui.png">
+    <p class="colorf">选择银行卡</p>
+</header>
+<div class="waper mt mb margin-bottom" ng-init="cardlist()">
+    <div ng-repeat="carditem in items">
+        <div class="yongj_c cl borrs chitem" ng-class="{1:'',0:'bgfilter'}[carditem.IsDefault]" cardname="{{carditem.Id}}" ng-click="choseCard(carditem.Id+'',carditem.Status)" style="background-color:{{carditem.BankName | myBackGround}}">
+            <p class="left bgf">
+                <img src="{{carditem.BankName | myImgsrc}}">
+            </p>
+            <p class="left">
+                <span class="colorf mtb" ng-bind="carditem.BankName | mySubstr:'-':true"></span>
+                <!--<span class="colorf" ng-bind="carditem.BankName | mySubstr:'-':false"></span>-->
+                <span class="colorf" style="display:block;width:100%;" ng-switch on="carditem.Status">
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="1" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(正常)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="2" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(已禁用)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="4" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(绑定失败)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="5" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(验证中)'"></span>
+                </span>
+                <span class="colorf mtb" ng-bind="'**** **** **** ' + (carditem.CardNumber | limitTo:-4)"></span>
+            </p>
+        </div>
+    </div>
+</div>	

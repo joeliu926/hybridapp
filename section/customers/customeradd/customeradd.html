@@ -1,0 +1,54 @@
+﻿<div class="gpser waper">
+    <img class="left" ng-click="goback()" src="img/FHui.png">
+    <span class="right" ng-click="save()">保存</span>
+    <p>新增拜访</p>
+</div>
+<div class="waper zhaoh mta mb margin-bottom margin-bottom">
+    <p class="bob">
+        <label>姓名：</label>
+        <input type="text" name="name" ng-model="customer.name" placeholder="请输入姓名" ng-bind="customer.name" required />
+    </p>
+    <p class="bob">
+        <label>手机号：</label>
+        <input type="text" name="tel" ng-model="customer.tel" ng-pattern="/(1[3|4|5|7|8])[0-9]\d{8}/" ng-bind="customer.tel" placeholder="请输入手机号码" required />
+    </p>
+    <div class="bob" style="height: 3.2em;line-height: 3.2em;background: #fff;">
+        <label style="text-indent: 1em;color: #666;">地址：</label>
+        <input type="text" id="address" name="address" ng-model="customer.address"/>
+    </div>
+    <div class="xinZ boa borrs">
+        <p class="bob">拜访情况</p>
+        <textarea name="visit" ng-model="customer.visit" placeholder="请输入拜访客户情况" required></textarea>
+    </div>
+    <div class="xinZ boa borrs">
+        <p>店铺照片上传</p>
+        <p class="tis">(请保持图片上传清晰)</p>
+        <div class="photo">
+            <img src="img/zhaop.png" ng-click="uploadpic()" id="uploadpic" />
+            <input type="hidden" name="pic" ng-model="customer.pic" />
+        </div>
+    </div>
+    <div class="xinZ boa borrs">
+        <p class="bob">备注</p>
+        <textarea class="beiZ" name="remark" ng-model="customer.remark" placeholder="还有什么呢"></textarea>
+    </div>
+</div>
+
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/x2.png" />
+        <span class="her">客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

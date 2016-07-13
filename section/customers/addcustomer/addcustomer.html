@@ -1,0 +1,48 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ng-click="goback()" src="img/FHui.png">
+    <p class="colorf" ng-bind="addtitle">添加客户</p>
+</header>
+<div class="waper mta shez mb margin-bottom " ng-init="Initadd()">
+    <p class="bgf bot">
+        <label class="left">客户名称：</label>
+        <input type="text" name="Name" ng-model="iwCustomer.Name" ng-bind="iwCustomer.Name" placeholder="客户名称" required ng-required="true" />
+    </p>
+    <p class="bob bot bgf">
+        <label class="left" ng-show="isshow">注册手机号：</label>
+        <input type="text" name="UserName" ng-show="isshow" ng-model="iwCustomer.UserName" ng-bind="iwCustomer.UserName" required ng-required="true" placeholder="注册手机号" />
+        <label class="left" ng-hide="isshow" ng-bind="'注册手机号：&nbsp;&nbsp;&nbsp;&nbsp;' + (iwCustomer.UserName)"></label>
+    </p>
+    <p class="bob bgf">
+        <label class="left">电话号码：</label>
+        <input type="text" name="OfficialTel" ng-model="iwCustomer.OfficialTel" ng-bind="iwCustomer.OfficialTel" placeholder=" 电话号码" />
+    </p>
+
+    <div class="xinZ boa borrs">
+        <p>店铺照片上传</p>
+        <p class="tis">(请保持图片上传清晰)</p>
+        <div class="photo">
+            <img src="img/zhaop.png" ng-click="uploadpic()" id="uploadpic" />
+            <input type="hidden" name="pic" ng-model="iwCustomer.ImageId" />
+
+            <input type="hidden" name="address" ng-model="iwCustomer.CustomerAddress" />
+            <input type="hidden" name="address_x" ng-model="iwCustomer.CustomerAddress_x" />
+            <input type="hidden" name="address_y" ng-model="iwCustomer.CustomerAddress_y" />
+        </div>
+    </div>
+
+    <p class="bob bgf">
+        <label class="left">法人代表：</label>
+        <input type="text" name="LegalRepresentative" ng-model="iwCustomer.LegalRepresentative" ng-bind="iwCustomer.LegalRepresentative" placeholder="法人代表" />
+    </p>
+    <p class="bob bgf">
+        <label class="left">注册资本：</label>
+        <input type="text" name="Assets" ng-model="iwCustomer.Assets" ng-bind="iwCustomer.Assets" placeholder="注册资本" />
+    </p>
+
+
+    <p class="bob bgf">
+        <label class="left">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</label>
+        <input type="text" name="CustomerAddress" ng-model="iwCustomer.CustomerAddress" ng-bind="iwCustomer.CustomerAddress" placeholder="地址" />
+    </p>
+    <button class="xia borrs bgcolor colorf" ng-click="addCommit()">确认</button>
+</div>

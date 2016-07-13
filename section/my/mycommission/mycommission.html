@@ -1,0 +1,97 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ui-sref="mylist" src="img/FHui.png">
+    <p class="colorf">佣金</p>
+</header>
+<div class="waper mt mb margin-bottom  margin-bottom" ng-init="searchCommission()">
+    <div class="yongj_a bgf boa borrs">
+        <p>
+            <span>到账银行卡</span>
+            <span class="color" ui-sref="chosebankcard" data-cardid="{{commissioncommit.cardid}}" ng-bind="(commissioncommit.bankname | mySubstr:'-':true) + '(' + (commissioncommit.cardnumber | limitTo:-4) + ')'"></span>
+        </p>
+        <p>
+            <span>可提现金额</span>
+            <span class="price" ng-bind="commission.withdrawalprice | currency:'￥'"></span>
+        </p>
+        <p>
+            <span>本次提现金额</span>
+            <span class="price" ng-bind="commission.currentprice | currency:'￥'"></span>
+        </p>
+        <p>
+            <span>已提现金额</span>
+            <span class="price" ng-bind="commission.haswithdrawalprice | currency:'￥'"></span>
+        </p>
+        <button class="bgcolor colorf borrs" ng-click="extractCommission()">提&nbsp;&nbsp;&nbsp;现</button>
+        <p class="bob souS">
+            <img class="left" src="img/rili.png">
+            <a class="right borrs anniu" ng-click="searchCommission()">
+                <img class="left" src="img/fangDJ.png">
+                搜索
+            </a>
+            <label></label>
+            <input class="boa borrs time date-input" type="text" name="startdate" id="startdate" ng-model="commission.startdate" readonly="readonly" />
+            <label>-</label>
+            <input class="boa borrs time date-input" name="enddate" type="text" id="enddate" ng-model="commission.enddate" readonly="readonly" />
+        </p>
+    </div>
+
+    <div class="yongj_b bob bot bgf mtb">
+        <div class="bob cl">
+
+            <p class="left checkboxFour boae">
+                <input class="left" type="radio" name="commissionradio" id="commissionall" ng-click="sellectStatus(0)" checked />
+                <label for="commissionall"></label>
+            </p>
+            <span class="left">全部</span>
+
+            <p class="left checkboxFour boae">
+                <input class="left" type="radio" name="commissionradio" id="commissiondone" ng-click="sellectStatus(1)" />
+                <label for="commissiondone"></label>
+            </p>
+            <span class="left">已提现</span>
+
+            <p class="left checkboxFour boae">
+                <input class="left" type="radio" name="commissionradio" id="commissionno" ng-click="sellectStatus(2)" />
+                <label for="commissionno"></label>
+            </p>
+            <span class="left">未提现</span>
+
+        </div>
+        <div class="bobd cl" ng-repeat="commissionitem in commissionlist">
+            <p class="left boae" ng-class="{1:'checkboxFour-none',0:'checkboxFour'}[commissionitem.IsWithdraw]">
+                <span ng-if="commissionitem.IsWithdraw === 0">
+                    <input class="left citem" type="checkbox" id="item{{$index}}" data-commprice="{{commissionitem.OrderSummaryPrice * commission.withdrawalpercent / 100}}" data-summarydate="{{commissionitem.SummaryDate}}" ng-click="checkchoice($index)">
+                    <label for="item{{$index}}"></label>
+                </span>
+            </p>
+            <p class="left" ng-click="showroder(commissionitem.SummaryDate)">
+                <span>日期：<small ng-bind="commissionitem.SummaryDate"></small></span>
+                <span>订单金额：<small class="price" ng-bind="commissionitem.OrderSummaryPrice | currency:'￥'"></small></span>
+                <span>佣金金额：<small class="price" ng-bind="commissionitem.OrderSummaryPrice * commissionitem.WithdrawalPercent / 100 | currency:'￥'"></small></span>
+                <span>佣金比例：<small ng-bind="commissionitem.WithdrawalPercent + '%'"></small></span>
+            </p>
+            <p class="left" ng-click="showroder(commissionitem.SummaryDate)">
+
+                <span style="margin-top:50%;color:#008AD4;margin-left:25px;">查看订单</span>
+            </p>
+        </div>
+    </div>
+</div>	
+
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist">
+        <img src="img/mychecked.png" />
+        <span class="her">我的</span>
+    </p>
+</div>

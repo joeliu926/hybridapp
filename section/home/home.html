@@ -1,0 +1,25 @@
+﻿<div class="gpser waper">
+    <!--<span class="left" ui-sref="customeradd">新增拜访</span>-->
+    <span class="right" ui-sref="setup">设置</span>
+    <p>首页</p>
+</div>
+<div class="home-map-div waper">
+    <div id="baiduMap">
+    </div>
+</div>
+
+<div class="home-Qdao-div waper" style="display:{{ishide || block}}">
+    <button type="button" ui-sref="customervisit">我的拜访</button>
+    <button ng-click="signed()" style="background:{{inuser}}" ng-bind="alertstring"></button> 
+</div>
+
+<div class="home-tiqu-div waper" ui-sref="mycommission">
+    <div>
+        <span>总 资 产：<span id="spanwithprice" ng-bind="withdrawalprice"></span> 元</span>
+        <span>累 计 收 益：<span id="spanhasprice" ng-bind="haswithdrawalprice"></span> 元</span>
+    </div>
+    <div>
+        提 取
+    </div>
+</div>
+<div ng-include="'/Mobile/section/common/footer.html'"></div>

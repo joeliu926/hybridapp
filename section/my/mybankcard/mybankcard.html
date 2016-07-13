@@ -1,0 +1,47 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ui-sref="mylist" src="img/FHui.png">
+    <img class="right tianJ" src="img/jia.png" ui-sref="bankcardadd" />
+    <p class="colorf">我的银行卡</p>
+</header>
+<div class="waper mt mb margin-bottom" ng-init="mybankcardinit()">
+    <div class="yongj_a bgf boa borrs">
+        <p>支持提取佣金银行：工商、农业、建设、中国、交行、光大、中信、招商、浦发、民生、华夏、北京、浙商、兴业十四家银行。</p>
+    </div>
+    <div ng-repeat="carditem in bankcardlist">
+        <div class="yongj_c cl borrs" ng-click="deleteItem($index,carditem.Id)" style="background-color:{{carditem.BankName | myBackGround}}">
+            <p class="left bgf">
+                <img src="{{carditem.BankName | myImgsrc}}">
+            </p>
+            <p class="left">
+                <span class="colorf mtb" ng-bind="carditem.BankName | mySubstr:'-':true"></span>
+                <!--<span class="colorf" ng-bind="carditem.BankName | mySubstr:'-':false"></span>-->
+                <span class="colorf" style="display:block;width:100%;" ng-switch on="carditem.Status">
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="1" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(正常)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="2" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(已禁用)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="4" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(绑定失败)'"></span>
+                    <span class="colorf left" style="display:block;width:100%;" ng-switch-when="5" ng-bind="(carditem.BankName | mySubstr:'-':false) + '(验证中)'"></span>
+                </span>
+                <span class="colorf mtb" ng-bind="'**** **** **** ' + (carditem.CardNumber | limitTo:-4)"></span>
+            </p>
+        </div>
+    </div>
+</div>	
+
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist">
+        <img src="img/mychecked.png" />
+        <span class="her">我的</span>
+    </p>
+</div>

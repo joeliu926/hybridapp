@@ -1,0 +1,47 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="mylist" src="img/FHui.png">
+    <p>消息列表</p>
+</div>
+<div class="dingd waper mta mb margin-bottom" ng-init="iniloaddata()" id="pullrefresh">
+    <p class="bob souS">
+        <img class="left" src="img/rili.png">
+        <a class="right borrs anniu" ng-click="iniloaddata()" id="searchindex">
+            <img class="left" src="img/fangDJ.png">
+            搜索
+        </a>
+        <label></label>
+        <input class="boa borrs time" type="text" name="startdate" id="startdate" ng-model="searchcondition.startdate" />
+        <label>-</label>
+        <input class="boa borrs time" type="text" name="enddate" id="enddate" ng-model="searchcondition.enddate" />
+    </p>
+    <div class="bobd boa bgf XIAO" ng-repeat="msgitem in msgList">
+
+
+        <a class="right borrs" ui-sref="msgdetail(msgitem)">详情</a>
+        <div ui-sref="msgdetail(msgitem)">
+            <p ng-class="{1:'hasread'}[msgitem.Status]" ng-bind="'标题：' + (msgitem.Title)"></p>
+            <p class="limitcount" ng-class="{1:'hasread'}[msgitem.Status]" ng-bind="'内容：' + (msgitem.SendMessage)"></p>
+            <p ng-class="{1:'hasread'}[msgitem.Status]" ng-bind="'发件人：' + (msgitem.SaleSendName)"></p>
+        </div>
+    </div>
+    <div ng-bind="hasdata" class="showmsg"></div>
+</div>
+<!--<div ng-include="'/Mobile/section/common/footer.html'"></div>-->
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span >首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist">
+        <img src="img/mychecked.png" />
+        <span class="her">我的</span>
+    </p>
+</div>

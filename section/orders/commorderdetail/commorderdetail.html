@@ -1,0 +1,96 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="commissionorders({date:date,iswithdraw:iswithdraw})" src="img/FHui.png">
+    <p>订单详情</p>
+</div>
+<div class="dingx waper mt bob bot bgf mb chgline margin-bottom">
+    <p><b>订&nbsp;&nbsp;单&nbsp;&nbsp;号：</b><span ng-bind="detail.OrderShowID"></span></p>
+    <p><b>买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家：</b><span ng-bind="detail.UserName"></span></p>
+    <p><b>联&nbsp;&nbsp;系&nbsp;&nbsp;人：</b><span ng-bind="detail.ContactName"></span></p>
+    <p ng-repeat="phone in detail.ContactWay" ng-if="phone.ischecked === 1"><b>买家电话：</b><span ng-bind="phone.keystring"></span></p>
+    <p><b>收货地址：</b><span ng-bind="(detail.location.Province.Name) + (detail.location.City.Name) + (detail.location.District.Name) + (detail.location.Area.Name)"></span></p>
+    <p><b>应收金额：</b><span class="price" ng-bind="detail.CodFee | currency:'￥'"></span></p>
+    <p><b>包含运费：</b><span class="price" ng-bind="detail.DeliveryFee | currency:'￥'"></span></p>
+    <p><b>使用链端币：</b><span ng-bind="(detail.OrderUseLDB) + '个'"></span></p>
+    <p><b>赠送链端币：</b><span ng-bind="(detail.GiftLDB) + '个'"></span></p>
+    <p>
+        <b>
+            付款方式：
+        </b>
+        <span ng-switch on="detail.PayMathod">
+            <span ng-switch-when="1">现金</span>
+            <span ng-switch-when="2">POS刷卡</span>
+            <span ng-switch-when="3">支付宝</span>
+            <span ng-switch-when="4">网银</span>
+            <span ng-switch-when="5">微信</span>
+        </span>
+    </p>
+    <p>
+        <b>
+            支付方式：
+        </b>
+        <span ng-switch on="detail.PayMode">
+            <span ng-switch-when="1">在线支付</span>
+            <span ng-switch-when="2">货到付款</span>
+        </span>
+    </p>
+    <p>
+        <b>
+            交易状态：
+        </b>
+        <span ng-switch on="detail.OrderFlowStatus">
+            <span ng-switch-when="10">待发货</span>
+            <span ng-switch-when="20">已发货待收货</span>
+            <span ng-switch-when="40">已收货</span>
+            <span ng-switch-when="41">配送失败</span>
+            <span ng-switch-when="50">卖家关闭订单</span>
+            <span ng-switch-when="51">买家关闭订单</span>
+            <span ng-switch-when="52">系统关闭订单</span>
+        </span>
+        <span ng-switch on="detail.OrderCashStatus">
+            <span ng-switch-when="10">(待付款)</span>
+            <span ng-switch-when="20">(已付款)</span>
+            <span ng-switch-when="21">(付款失败)</span>
+            <span ng-switch-when="100">(确认收款)</span>
+        </span>
+    </p>
+    <p>
+        <b> 买家留言：</b>
+    <p ng-repeat="memo in detail.Momo">
+        <span ng-bind="memo.Memo"></span>
+    </p>
+    <p><b>下单时间：</b><span ng-bind="detail.CreateTime"></span></p>
+    <div ng-repeat="goods in detail.SKU">
+        <div style="border-top:dashed 1px black; padding-top:5px;  padding-bottom:5px; margin-left:-20px;height:140px; padding-left:25px;">
+            <div style="width:40%; float:left;">
+                <img style="width:70%;height:70%; margin: 5px 0 0 10px;" src="{{'http://image.lianduan.com.cn/' + goods.Image}}" alt="{{goods.SkuName}}" />
+            </div>
+
+            <div style="width:59%; float:left;">
+                <p ng-bind="'商品名称:' + (goods.SkuName)"></p>
+                <p>单价(元):<span class="price" ng-bind="goods.Price | currency:'￥'"></span></p>
+                <p>折扣价(元):<span class="price" ng-bind="goods.ReferencePrice | currency:'￥'"></span></p>
+                <p>数量:<em ng-bind="goods.Amount"></em></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--<div ng-include="'/Mobile/section/common/footer.html'"></div>-->
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/x3.png" />
+        <span class="her">订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

@@ -1,0 +1,32 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="customervisit" src="img/FHui.png">
+    <p>拜访详情</p>
+</div>
+    <div class="dingx waper mt bob bot bgf mb chgline margin-bottom">
+    <p><b>客户名称：</b><span ng-bind="detail.Name"></span></p>
+    <p><b>客户手机：</b><span ng-bind="detail.PhoneNumber"></span></p>
+    <p><b>客户地址：</b><span ng-bind="detail.Address"></span></p>
+    <p><b>拜访情况：</b><span ng-bind="detail.Discription"></span></p>
+    <p><b>拜访时间：</b><span ng-bind="detail.VisitTime"></span></p>
+    <p><b class="vat">店面图片：</b><img class="bo" src="{{'http://image.lianduan.com.cn/' + detail.ShoppictureId}}" alt="{{detail.Name}}" /> </p>
+    <p><b>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</b><span ng-bind="detail.Remark"></span></p>
+</div>
+<!--<div ng-include="'/Mobile/section/common/footer.html'"></div>-->
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/x2.png" />
+        <span class="her">客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

@@ -1,0 +1,19 @@
+﻿<div class="gpser waper">
+    <img ui-sref="setup" src="img/FHui.png">
+    <p>修改密码</p>
+</div>
+<div class="waper mta zhaoh">
+    <p class="bob">
+        <label>原密码:</label>
+        <input type="password" name="oldpwd" id="oldpwd" ng-model="pwddata.oldpwd" placeholder="请输入原密码" />
+    </p>
+    <p class="bob bot xin">
+        <label>新密码:</label>
+        <input type="password" name="newpwd" id="newpwd" ng-model="pwddata.newpwd" placeholder="请输入新密码" />
+    </p>
+    <p class="bob">
+        <label>确认密码:</label>
+        <input type="password" name="confirmpwd" id="confirmpwd" ng-model="pwddata.confirmpwd" placeholder="请再次输入密码" />
+    </p>
+    <button class="xia" ng-click="ccommit()">确&nbsp;&nbsp;&nbsp;定</button>
+</div>

@@ -1,0 +1,32 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="msglist" src="img/FHui.png">
+    <p>消息详情</p>
+</div>
+<div class="dingx waper mt bob bot bgf chgline margin-bottom" ng-init="msgdetail()">
+
+    <h1 class="tcenter" style="margin-top:15px; margin-bottom:15px;"><span ng-bind="detailinfo.Title"></span></h1>
+    <p class="msgfrom">发送人：<span ng-bind="detailinfo.SaleSendName"></span></p>
+    <p class="msgfrom msgfromr">发送时间：<span ng-bind="detailinfo.CreatedTime"></span></p>
+
+    <p class="bob bot bor bol" style="margin:5px 5px 5px 5px; width:97%;min-height:400px;">&nbsp;&nbsp;&nbsp;&nbsp;<span ng-bind="detailinfo.SendMessage"></span></p>
+
+</div>
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist">
+        <img src="img/mychecked.png" />
+        <span class="her">我的</span>
+    </p>
+</div>
+

@@ -1,0 +1,44 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="customerdetail({id:backid})" src="img/FHui.png">
+    <p ng-bind="(currentname) + '订单'"></p>
+</div>
+<div class="dingd waper mta mb margin-bottom" ng-init="customerordersinit()">
+    <p class="bob souS">
+        <img class="left" src="img/rili.png">
+        <a class="right borrs anniu" ng-click="customerordersinit()">
+            <img class="left" src="img/fangDJ.png">
+            搜索
+        </a>
+        <label> </label>
+        <input class="boa borrs time" type="text" name="startdate" ng-click="pickDate('start')" ng-model="orders.startdate" />
+        <label>-</label>
+        <input class="boa borrs time" type="text" name="enddate" ng-click="pickDate('end')" ng-model="orders.enddate" />
+    </p>
+    <div class="bobd boa bgf XIAO" ng-repeat="order in orderslist">
+        <a class="right borrs" ng-click="showorderdetailcur(order.OrderID)">查看详情</a>
+        <div ng-click="showorderdetailcur(order.OrderID)">
+            <p>订单号：<span style="color:#916118;" ng-bind="order.OrderShowID"></span></p>
+            <p>买家姓名：<span style="color:#916118;" ng-bind="order.ContactName"></span></p>
+            <p ng-repeat="phone in order.ContactWay" ng-if="phone.ischecked === 0" ng-bind="'买家电话：' + (phone.keystring)"></p>
+        </div>
+    </div>
+</div>
+<!--<div ng-include="'/Mobile/section/common/footer.html'"></div>-->
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/m2.png" />
+        <span>客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/x3.png" />
+        <span class="her">订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

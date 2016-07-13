@@ -1,0 +1,47 @@
+﻿<header class="waper bgcolor">
+    <img class="left" ng-click="goback()" src="img/FHui.png">
+    <p class="colorf" ng-bind="addlinktitle">添加联系人</p>
+</header>
+<div class="waper mta shez mb margin-bottom" ng-init="Initlinkadd()">
+    <p class="bgf bot">
+        <label class="left">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+        <input type="text" name="Name" ng-model="iwCustomerLinkman.Name" placeholder="姓名" required />
+    </p>
+    <p class="bob bot bgf">
+        <label class="left">手机号：</label>
+        <input type="text" name="PhoneNumber" ng-model="iwCustomerLinkman.PhoneNumber" ng-bind="iwCustomerLinkman.PhoneNumber" ng-pattern="/(1[3|4|5|7|8])[0-9]\d{8}/" placeholder="手机号" />
+    </p>
+    <div class="bob bgf" style="height:3.2em;line-height:3.2em;">
+        <label class="left">&nbsp;&nbsp;&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+        <p class="left checkboxFour boae" style="height:1.2em;">
+            <input class="left" type="radio" value="1" ng-model="iwCustomerLinkman.Sex" name="Sex" id="commissiondone" />
+            <label for="commissiondone" style="margin:0;"></label>
+        </p>
+        <span class="left">男</span>
+
+        <p class="left checkboxFour boae" style="height:1.2em;">
+            <input class="left" type="radio" value="2" ng-model="iwCustomerLinkman.Sex" name="Sex" id="commissionno" />
+            <label for="commissionno" style="margin:0;"></label>
+        </p>
+        <span class="left">女</span>
+
+    </div>
+    <div class="clear"></div>
+    <p class="bob bgf">
+        <label class="left">微&nbsp;&nbsp;&nbsp;&nbsp;信：</label>
+        <input type="text" name="WechartNumber" ng-model="iwCustomerLinkman.WechartNumber" ng-bind="iwCustomerLinkman.WechartNumber" placeholder="微信" />
+    </p>
+    <p class="bob bgf">
+        <label class="left">QQ号码：</label>
+        <input type="number" name="QqNumber" ng-model="iwCustomerLinkman.QqNumber" ng-bind="iwCustomerLinkman.QqNumber" placeholder="QQ号码" />
+    </p>
+    <p class="bob bgf">
+        <label class="left">年&nbsp;&nbsp;&nbsp;&nbsp;龄：</label>
+        <input type="number" name="Age" ng-model="iwCustomerLinkman.Age" ng-bind="iwCustomerLinkman.Age" placeholder="年龄" />
+    </p>
+    <p class="bob bgf">
+        <label class="left">地&nbsp;&nbsp;&nbsp;&nbsp;址：</label>
+        <input type="text" name="HomeAddress" ng-model="iwCustomerLinkman.HomeAddress" ng-bind="iwCustomerLinkman.HomeAddress" placeholder=" 地址" />
+    </p>
+    <button class="xia borrs bgcolor colorf" ng-click="LinkmanCommit()">确认</button>
+</div>

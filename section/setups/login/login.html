@@ -1,0 +1,18 @@
+﻿<p class="gps waper">登录</p>
+<div class="log waper">
+    <p class="bob">
+        <label>账&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+        <input type="text" name="uanme" id="uname" ng-model="logindata.uname" placeholder="请输入帐号" />
+    </p>
+    <p class="bob">
+        <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+        <input type="password" name="pwd" id="pwd" ng-model="logindata.pwd" placeholder="请输入密码" />
+    </p>
+    <p class="bob">
+        <label>验证码：</label>
+        <input type="text" name="vcode" id="vcode" ng-model="logindata.vcode" placeholder="验证码" style="width:40%;" />
+        <img id="validate" ng-click="cgVcode()" style=" width:100px;vertical-align:middle;" />
+    </p>
+    <span class="right" ui-sref="retrievepwd">忘记密码?</span>
+    <button class="bgcolor"  ng-click="login()">登&nbsp;录</button>
+</div>

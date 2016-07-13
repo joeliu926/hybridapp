@@ -1,0 +1,37 @@
+﻿<div class="gpser waper">
+    <img ui-sref="login" src="img/FHui.png">
+    <p>{{registertext}}</p>
+</div>
+<div class="waper mta zhaoh margin-bottom">
+    <p class="bob">
+        <label>手机号:</label>
+        <input type="tel" name="phonenum" ng-maxlength="11" ng-minlength="11" ng-model="register.phonenum" ng-pattern="(1[3|4|5|7|8])[0-9]\d{8}" placeholder="请输入手机号码" required />
+    </p>
+    <p class="sw bob">
+        <label>验证码:</label>
+        <input type="text" name="verifycode" ng-maxlength="4" ng-model="register.verifycode" placeholder="请输入验证码" required />
+        <button class="right" type="button" ng-click="getverifycode()" ng-disabled="isdisabled" ng-bind="verifytext"></button>
+    </p>
+    <p class="bob bot xin">
+        <label>密码:</label>
+        <input type="password" name="pwd" ng-model="register.pwd" placeholder="请输入密码" required />
+    </p>
+    <p class="bob">
+        <label>确认密码:</label>
+        <input type="password" name="pwdconfirm" ng-model="register.pwdconfirm" placeholder="请再次输入密码" required />
+    </p>
+    <p class="bob bot xin">
+        <label>真实姓名:</label>
+        <input type="text" name="realname" ng-model="register.realname" placeholder="请输入真实姓名" />
+    </p>
+    <p class="bob">
+        <label>所在区域:</label>
+        <input type="text" name="addressreadonly" ng-model="addressreadonly" placeholder="请选择所在区域" readonly="readonly" ng-click="selectaddress(0,true)" required />
+        <input type="hidden" name="address" ng-model="register.address" value="{{register.address}}" />
+    </p>
+    <p class="bob">
+        <label>详细地址:</label>
+        <input type="text" name="locationdetail" ng-model="register.locationdetail" placeholder="请输入详细地址" required />
+    </p>
+    <button class="xia" type="button" ng-click="commit()" ng-bind="committext" style="margin-top:1em;"></button>
+</div>

@@ -1,0 +1,54 @@
+﻿<div class="gpser waper">
+    <img class="left" ui-sref="home" src="img/FHui.png">
+    <p>客户拜访</p>
+</div>
+<div class="baif waper mta mb margin-bottom" ng-init="custimervisitinit()">
+    <p class="bob souS">
+        <img class="left" src="img/rili.png">
+        <a class="right borrs anniu" ng-click="custimervisitinit()">
+            <img class="left" src="img/fangDJ.png">
+            搜索
+        </a>
+        <label></label>
+        <input class="boa borrs time" type="text" name="startdate" ng-click="pickDate('start')" ng-model="visit.startdate" />
+        <label>-</label>
+        <input class="boa borrs time" name="enddate" type="text" ng-click="pickDate('end')" ng-model="visit.enddate" />
+    </p>
+
+
+    <div class="bobd bgf margini" ng-repeat="visititem in visitlist">
+        <div>
+            <p class="right baiF">
+                <span class="xq btnr right" ui-sref="visitdetail({id:visititem.Id})">详情</span>
+                <span class="colN disi clear" ng-bind="visititem.CreatedTime"></span>
+            </p>
+            <p ui-sref="visitdetail({id:visititem.Id})">
+                <span ng-bind="visititem.Name"></span>
+                <span ng-bind="visititem.PhoneNumber"></span><br>
+                <span class="colN whalf limitcount " ng-bind="visititem.Address"></span>
+            </p>
+        </div>
+    </div>
+
+    <div ng-bind="hasdata" class="showmsg"></div>
+
+
+</div>
+<div class="foot waper bot">
+    <p class="left" ui-sref="home">
+        <img src="img/m1.png" />
+        <span>首页</span>
+    </p>
+    <p class="left" ui-sref="mycustomer">
+        <img src="img/x2.png" />
+        <span class="her">客户</span>
+    </p>
+    <p class="left" ui-sref="customerorders">
+        <img src="img/m3.png" />
+        <span>订单</span>
+    </p>
+    <p class="left" ui-sref="mylist" ui-sref-opt="{reload:true}">
+        <img src="img/mynocheck.png" />
+        <span>我的</span>
+    </p>
+</div>

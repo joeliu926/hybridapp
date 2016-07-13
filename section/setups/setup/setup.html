@@ -1,0 +1,19 @@
+﻿<div class="gpser waper">
+    <img ui-sref="home" src="img/FHui.png">
+    <p>设置</p>
+</div>
+<div class="waper mta shez margin-bottom">
+    <p class="bob bot xin" ui-sref="chgpwd">
+        <label class="left">修改密码</label>
+        <img class="right" src="img/jiao.png" />
+    </p>
+    <p class="bob bot xin" ng-click="clearcache()">
+        <label class="left">清除缓存</label>
+        <img class="right" src="img/jiao.png" />
+    </p>
+    <p class="bob bot xin" ng-click="checkversion()">
+        <label class="left">检测新版本</label>
+        <label class="right" ng-bind="version"></label>
+    </p>
+    <button class="xia" ng-click="cexit()">退&nbsp;&nbsp;&nbsp;出</button>
+</div>
